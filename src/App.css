@@ -1,3 +1,16 @@
+.completed {
+  text-decoration: line-through !important;
+  display: flex;
+  flex-wrap: wrap;
+  color: red;
+}
+.td{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  flex-direction: row;
+}
+
 .app {
   text-align: center;
   padding: 20px;
