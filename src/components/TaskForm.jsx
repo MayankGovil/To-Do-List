@@ -13,14 +13,19 @@ function TaskForm({ onAddTask }) {
   // Function to handle add button click
   const handleAddButtonClick = () => {
     // Call the parent function to add the task & Clear the input field after adding task
-    onAddTask(taskInput);
-    setTaskInput('');
+    if (taskInput == '') {
+      alert("Please add a task ");
+    } else {
+      onAddTask(taskInput);
+      setTaskInput('');
+    }
+
   };
 
   return (
     <Form className="mb-3">
       <Form.Group className='d-flex mx-auto'>
-       
+
         <Form.Control
           type="text"
           className='w-75 ms-5'
@@ -28,7 +33,7 @@ function TaskForm({ onAddTask }) {
           onChange={handleInputChange}
           placeholder="Add a new task"
         />
-       
+
         <Button variant="primary" onClick={handleAddButtonClick}>Add Task</Button>
       </Form.Group>
     </Form>
