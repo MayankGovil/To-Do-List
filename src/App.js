@@ -43,14 +43,6 @@ function App() {
 
   // Function to handle confirming deletion of a task
 
-  // const handleConfirmDeleteTask = () => {
-  //   const newTasks = [...tasks];
-  //   newTasks.splice(taskToDelete, 1);
-  //   setTasks(newTasks);
-  //   setShowModal(false);
-  //   handleFilterChange('All')
-  // };
-
   const handleConfirmDeleteTask = () => {
     const newTasks = [];
     for (let i = 0; i < tasks.length; i++) {
