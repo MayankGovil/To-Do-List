@@ -29,6 +29,7 @@ function App() {
   const handleAddTask = (taskInput) => {
     if (taskInput.trim() !== '') {
       setTasks([...tasks, { title: taskInput, completed: false }]);
+      handleFilterChange('All')
     }
   };
 
@@ -41,11 +42,28 @@ function App() {
   };
 
   // Function to handle confirming deletion of a task
+
+  // const handleConfirmDeleteTask = () => {
+  //   const newTasks = [...tasks];
+  //   newTasks.splice(taskToDelete, 1);
+  //   setTasks(newTasks);
+  //   setShowModal(false);
+  //   handleFilterChange('All')
+  // };
+
   const handleConfirmDeleteTask = () => {
-    const newTasks = tasks.filter((_, i) => i !== taskToDelete);
+    const newTasks = [];
+    for (let i = 0; i < tasks.length; i++) {
+      if (i !== taskToDelete) {
+        newTasks.push(tasks[i]);
+      }
+    }
     setTasks(newTasks);
     setShowModal(false);
+    handleFilterChange('All')
   };
+  
+
 
   // Function to handle initiating deletion of a task
   const handleDeleteTask = (index) => {
